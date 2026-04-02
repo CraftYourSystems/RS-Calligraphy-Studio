@@ -1,7 +1,10 @@
 import { useEffect } from "react";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
+import GalleryPage from "./pages/GalleryPage";
+import WorkshopsPage from "./pages/WorkshopsPage";
+import WorkshopDetailPage from "./pages/WorkshopDetailPage";
 
 const FONT_STYLESHEET_ID = "calligraphy-google-fonts";
 const FONT_STYLESHEET_HREF =
@@ -25,12 +28,15 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/workshops" element={<WorkshopsPage />} />
+        <Route path="/workshops/:id" element={<WorkshopDetailPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

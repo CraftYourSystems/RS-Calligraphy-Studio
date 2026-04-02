@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Workshops", href: "/#workshops" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Home", href: "/", isRoute: true },
+  { label: "About", href: "/about", isRoute: true },
+  { label: "Gallery", href: "/gallery", isRoute: true },
+  { label: "Workshops", href: "/workshops", isRoute: true },
+  { label: "Contact", href: "#contact", isRoute: false },
 ];
 
 const Navbar = () => {
@@ -73,7 +73,20 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = getIsActive(link.href);
-            return (
+            return link.isRoute ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                className={`text-xs tracking-[0.2em] uppercase transition-colors duration-200 ${
+                  isActive
+                    ? "text-[#b5924c] border-b border-[#b5924c] pb-1"
+                    : "text-[#5c4a34] hover:text-[#b5924c]"
+                }`}
+                style={{ fontFamily: "Georgia, serif" }}
+              >
+                {link.label}
+              </Link>
+            ) : (
               <a
                 key={link.label}
                 href={link.href}
@@ -93,7 +106,7 @@ const Navbar = () => {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="/#workshops"
+            href="/workshops"
             className="group bg-[#2c1f0e] hover:bg-[#b5924c] text-xs tracking-[0.25em] uppercase px-6 py-3 transition-colors duration-300"
             style={{ fontFamily: "Georgia, serif" }}
           >
@@ -124,7 +137,21 @@ const Navbar = () => {
         <div className="px-6 py-6 flex flex-col gap-5">
           {navLinks.map((link) => {
             const isActive = getIsActive(link.href);
-            return (
+            return link.isRoute ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                className={`text-xs tracking-[0.2em] uppercase ${
+                  isActive
+                    ? "text-[#b5924c]"
+                    : "text-[#5c4a34] hover:text-[#b5924c]"
+                }`}
+                style={{ fontFamily: "Georgia, serif" }}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ) : (
               <a
                 key={link.label}
                 href={link.href}
@@ -141,7 +168,7 @@ const Navbar = () => {
             );
           })}
           <a
-            href="/#workshops"
+            href="/workshops"
             className="mt-2 bg-[#2c1f0e] text-xs tracking-[0.25em] uppercase px-6 py-3 text-center"
             style={{ fontFamily: "Georgia, serif" }}
           >

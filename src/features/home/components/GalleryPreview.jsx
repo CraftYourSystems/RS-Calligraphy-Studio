@@ -39,7 +39,7 @@ const GalleryPreview = () => {
             </h2>
           </div>
           <a
-            href="#gallery"
+            href="/gallery"
             className="group self-start sm:self-auto inline-flex items-center gap-3 bg-[#2c1f0e] hover:bg-[#b5924c] text-[10px] tracking-[0.25em] uppercase px-8 py-3.5 transition-colors duration-300"
             style={{ fontFamily: "Georgia, serif" }}
           >

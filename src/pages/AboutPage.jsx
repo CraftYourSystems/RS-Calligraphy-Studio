@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../features/home/components/Navbar";
+import Footer from "../features/home/components/Footer";
 
 /* ─────────────────────────────────────────
    AboutHero
@@ -105,7 +106,7 @@ const storyParagraphs = [
   },
   {
     id: 3, pullQuote: "Art without boundaries.",
-    text: "Whether at home or while exploring new places, my practice has followed me everywhere. A sketchbook on a café table, ink pressed to paper in quiet hotel mornings — the studio is wherever the nib meets the page. This portability of art is one of its greatest gifts.",
+    text: "Whether at home or exploring new places, my practice moves with me.From quiet mornings in hotel rooms to moments spent in the mountains, my sketchbook and pen are always within reach. The studio is never a fixed place — it exists wherever the nib meets the paper.This is what I love most about calligraphy: an art without boundaries, shaped by presence, patience, and the world around us.",
   },
 ];
 
@@ -233,7 +234,7 @@ const AboutCTA = () => {
 
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: 20 }}>
           <a
-            href="/#workshops"
+            href="/workshops"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             style={{
@@ -259,7 +260,7 @@ const AboutCTA = () => {
             </svg>
           </a>
 
-          <a href="/#gallery" style={{ background: "none", border: "none", borderBottom: "1px solid #b5924c", color: "#7a6248", fontSize: 12, letterSpacing: "0.25em", textTransform: "uppercase", fontFamily: "Georgia, serif", cursor: "pointer", paddingBottom: 2, textDecoration: "none" }}>
+          <a href="/gallery" style={{ background: "none", border: "none", borderBottom: "1px solid #b5924c", color: "#7a6248", fontSize: 12, letterSpacing: "0.25em", textTransform: "uppercase", fontFamily: "Georgia, serif", cursor: "pointer", paddingBottom: 2, textDecoration: "none" }}>
             View Gallery
           </a>
         </div>
@@ -289,6 +290,7 @@ export default function AboutPage() {
       <AboutStory />
       <AboutCredibility />
       <AboutCTA />
+      <Footer />
     </main>
   );
 }

@@ -1,8 +1,8 @@
 const footerLinks = {
   Studio: [
     { label: "About", href: "/about" },
-    { label: "Gallery", href: "/#gallery" },
-    { label: "Workshops", href: "/#workshops" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Workshops", href: "/workshops" },
     { label: "Contact", href: "/#contact" },
   ],
   Learn: ["Beginner Guide", "Script Styles", "Tools & Supplies", "FAQ"],

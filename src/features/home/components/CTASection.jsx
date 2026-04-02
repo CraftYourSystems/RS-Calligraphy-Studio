@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CTASection = () => {
+const CTASection = ({ onBookTrial }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -84,6 +84,14 @@ const CTASection = () => {
             >
               <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
+          </button>
+
+          <button
+            onClick={onBookTrial}
+            className="group inline-flex items-center gap-3 justify-center bg-transparent border border-[#b5924c] hover:bg-[#b5924c] text-[#f5f0e8] hover:text-[#2c1f0e] text-xs tracking-[0.28em] uppercase px-12 py-5 transition-colors duration-300"
+            style={{ fontFamily: "Georgia, serif" }}
+          >
+            <span>Book a Free Trial</span>
           </button>
 
           <a

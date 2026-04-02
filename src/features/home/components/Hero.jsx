@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Hero = () => {
+const Hero = ({ onBookTrial }) => {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80);
@@ -101,7 +101,7 @@ const Hero = () => {
             style={{ transitionDelay: "400ms" }}
           >
             <a
-              href="#workshops"
+              href="/workshops"
               className="group bg-[#2c1f0e] hover:bg-[#b5924c] text-xs tracking-[0.25em] uppercase px-10 py-4 transition-colors duration-300 flex items-center gap-3"
               style={{ fontFamily: "Georgia, serif" }}
             >
@@ -115,6 +115,13 @@ const Hero = () => {
                 <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
+            <button
+              onClick={onBookTrial}
+              className="text-[#5c4a34] hover:text-[#b5924c] text-xs tracking-[0.25em] uppercase border-b border-[#d4c4a8] hover:border-[#b5924c] pb-0.5 transition-colors duration-200"
+              style={{ fontFamily: "Georgia, serif" }}
+            >
+              Book a Free Trial
+            </button>
             <a
               href="#about"
               className="text-[#5c4a34] hover:text-[#b5924c] text-xs tracking-[0.25em] uppercase border-b border-[#d4c4a8] hover:border-[#b5924c] pb-0.5 transition-colors duration-200"
